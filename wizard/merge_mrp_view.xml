@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle
+ -->
+<odoo>
+    <record id="view_dev_merge_mrp_form" model="ir.ui.view">
+        <field name="name">view.dev.merge.mrp.form</field>
+        <field name="model">merge.mrp</field>
+        <field name="arch" type="xml">
+            <form string="Merge Manufacturing Orders">
+                <h4>Are you sure you want to merge Manufacturing Orders ?</h4>
+                <footer>
+                    <button string="Merge" name="merge_mrp" type="object" class="oe_highlight"/>
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+    <act_window id="dev_merge_manufaturing_order"
+                name="Merge Manufacturing Orders"
+                res_model="merge.mrp" 
+                binding_model="mrp.production"
+                view_mode="form" 
+                target="new"/>
+        
+    
+</odoo>
