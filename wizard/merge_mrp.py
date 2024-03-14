@@ -38,7 +38,7 @@ class MergeMRP(models.TransientModel):
         for mrp in mrp_ids:
             qty += mrp.product_qty
             picking_ids = self.env['stock.picking'].search([
-                ('group_id', '=', mrp.procurement_group_id.id), ('group_id', '!=', False),('picking_type_id','=',11)
+                ('group_id', '=', mrp.procurement_group_id.id), ('group_id', '!=', False),('picking_type_id','=',11),('location_dest_id','=',mrp.location_src_id)
             ])
             delivery_count = len(picking_ids)
             if mrp.state not in ['draft','confirmed']:
